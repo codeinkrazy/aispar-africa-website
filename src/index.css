@@ -1,94 +1,50 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
-
+/* Cyberpunk Design System */
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Cyberpunk Colors */
+    --cyber-cyan: #00F0FF;
+    --hacker-magenta: #FF00F5;
+    --neon-yellow: #FFFF66;
+    --void-black: #121212;
+    --cyber-dark: #0A0A0A;
+    --cyber-gray: #2A2A2A;
+    --cyber-light: #F0F0F0;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Design System Colors */
+    --background: 210 11% 7%;
+    --foreground: 0 0% 94%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --card: 210 11% 9%;
+    --card-foreground: 0 0% 94%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --popover: 210 11% 9%;
+    --popover-foreground: 0 0% 94%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --primary: 186 100% 47%;
+    --primary-foreground: 210 11% 7%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --secondary: 210 5% 16%;
+    --secondary-foreground: 0 0% 94%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 5% 16%;
+    --muted-foreground: 215 20% 65%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --accent: 186 100% 47%;
+    --accent-foreground: 210 11% 7%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive: 320 100% 50%;
+    --destructive-foreground: 0 0% 94%;
+
+    --border: 210 5% 16%;
+    --input: 210 5% 16%;
+    --ring: 186 100% 47%;
 
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -98,6 +54,100 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-montserrat;
+    background: linear-gradient(135deg, var(--void-black) 0%, var(--cyber-dark) 100%);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-raleway font-bold;
+  }
+}
+
+@layer utilities {
+  .cyber-glow {
+    box-shadow: 0 0 20px var(--cyber-cyan), 0 0 40px var(--cyber-cyan), 0 0 60px var(--cyber-cyan);
+  }
+
+  .magenta-glow {
+    box-shadow: 0 0 20px var(--hacker-magenta), 0 0 40px var(--hacker-magenta);
+  }
+
+  .yellow-glow {
+    box-shadow: 0 0 15px var(--neon-yellow);
+  }
+
+  .glow-border {
+    border: 2px solid transparent;
+    background: linear-gradient(var(--void-black), var(--void-black)) padding-box,
+                linear-gradient(45deg, var(--cyber-cyan), var(--hacker-magenta)) border-box;
+  }
+
+  .cyber-gradient {
+    background: linear-gradient(90deg, var(--cyber-cyan), var(--hacker-magenta));
+  }
+
+  .text-cyber-cyan {
+    color: var(--cyber-cyan);
+  }
+
+  .text-hacker-magenta {
+    color: var(--hacker-magenta);
+  }
+
+  .text-neon-yellow {
+    color: var(--neon-yellow);
+  }
+
+  .bg-cyber-cyan {
+    background-color: var(--cyber-cyan);
+  }
+
+  .bg-hacker-magenta {
+    background-color: var(--hacker-magenta);
+  }
+
+  .bg-neon-yellow {
+    background-color: var(--neon-yellow);
+  }
+
+  .bg-void-black {
+    background-color: var(--void-black);
+  }
+
+  .border-cyber-cyan {
+    border-color: var(--cyber-cyan);
+  }
+
+  .hover-skew {
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+
+  .hover-skew:hover {
+    transform: skewX(-5deg) scale(1.05);
+  }
+
+  .glitch {
+    position: relative;
+    animation: glitch 2s infinite;
+  }
+
+  @keyframes glitch {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-2px); }
+    40% { transform: translateX(-1px); }
+    60% { transform: translateX(1px); }
+    80% { transform: translateX(2px); }
+  }
+
+  .typing-cursor::after {
+    content: '|';
+    color: var(--cyber-cyan);
+    animation: blink 1s infinite;
+  }
+
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
   }
 }
