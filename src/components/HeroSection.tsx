@@ -4,6 +4,7 @@ import TypingAnimation from './TypingAnimation';
 import Logo3D from './Logo3D';
 import Globe3D from './Globe3D';
 import SocialMediaIcons from './SocialMediaIcons';
+import ErrorBoundary from './ErrorBoundary';
 
 const HeroSection = () => {
   const typingTexts = [
@@ -21,7 +22,9 @@ const HeroSection = () => {
         <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-cyber-cyan to-hacker-magenta rounded-full blur-3xl opacity-20 animate-glow-pulse"></div>
-            <Globe3D />
+            <ErrorBoundary>
+              <Globe3D />
+            </ErrorBoundary>
           </div>
         </div>
 
@@ -91,7 +94,9 @@ const HeroSection = () => {
         <div className="order-3 lg:order-3 flex justify-center lg:justify-end animate-slide-in-right">
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-cyber-cyan to-hacker-magenta rounded-full blur-3xl opacity-20 animate-glow-pulse"></div>
-            <Logo3D />
+            <ErrorBoundary>
+              <Logo3D />
+            </ErrorBoundary>
           </div>
         </div>
       </div>
