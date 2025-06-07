@@ -4,6 +4,12 @@ import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
 import StatsSection from '../components/StatsSection';
 import PartnersSection from '../components/PartnersSection';
+import SolutionsSection from '../components/SolutionsSection';
+import ResearchSection from '../components/ResearchSection';
+import AboutSection from '../components/AboutSection';
+import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
+import WhatsAppFloat from '../components/WhatsAppFloat';
 
 const Index = () => {
   useEffect(() => {
@@ -44,6 +50,12 @@ const Index = () => {
       <HeroSection />
       <StatsSection />
       <PartnersSection />
+      <SolutionsSection />
+      <ResearchSection />
+      <AboutSection />
+      <ContactSection />
+      <Footer />
+      <WhatsAppFloat />
     </div>
   );
 };
