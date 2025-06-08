@@ -1,23 +1,26 @@
 
 import React from 'react';
 import TypingAnimation from './TypingAnimation';
-import Logo3D from './Logo3D';
 import Globe3D from './Globe3D';
 import ErrorBoundary from './ErrorBoundary';
+import ParticleBackground from './ParticleBackground';
 
 const HeroSection = () => {
   const typingTexts = [
-    "Leading Supply Chain Training Hub in Africa",
-    "Premier Research Institution for African Markets",
-    "Strategic Consultation Excellence Across 54 Nations",
-    "Transforming African Trade and Logistics",
-    "Building Sustainable Supply Chain Networks",
-    "Empowering African Businesses Through Innovation"
+    "Africa's Premier Supply Chain Innovation Hub",
+    "Transforming Continental Trade Networks Through Research",
+    "Leading Strategic Consultation Across 54 Nations", 
+    "Building Resilient Supply Chains for African Growth",
+    "Pioneering Logistics Excellence from Cape to Cairo",
+    "Empowering African Businesses Through Data-Driven Solutions"
   ];
 
   return (
-    <section id="home" className="min-h-screen flex flex-col justify-center pt-16 px-4">
-      <div className="max-w-7xl mx-auto">
+    <section id="home" className="min-h-screen flex flex-col justify-center pt-16 px-4 relative overflow-hidden">
+      {/* Particle Background */}
+      <ParticleBackground />
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           {/* Left Column - Text Content */}
@@ -27,19 +30,20 @@ const HeroSection = () => {
               <img 
                 src="/lovable-uploads/60c5a76c-4e92-411d-9446-f05af861d5bf.png" 
                 alt="AISPAR Africa" 
-                className="h-20 w-auto cyber-glow rounded-full shadow-2xl"
+                className="h-24 w-auto cyber-glow rounded-full shadow-2xl ring-4 ring-cyber-cyan/30"
               />
             </div>
 
             <div className="space-y-4">
               <h1 className="text-4xl lg:text-6xl font-raleway font-bold text-white">
-                <span className="text-cyber-cyan">AISPAR</span>
+                <span className="text-cyber-cyan glow-text">AISPAR</span>
                 <br />
-                <span className="text-neon-yellow">AFRICA</span>
+                <span className="text-neon-yellow glow-text">AFRICA</span>
               </h1>
               
-              <div className="h-24">
-                <p className="text-lg lg:text-xl font-montserrat text-gray-300">
+              <div className="h-24 relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-cyber-cyan/10 to-transparent rounded-lg"></div>
+                <p className="text-lg lg:text-xl font-montserrat text-gray-300 relative z-10 p-2">
                   <TypingAnimation 
                     texts={typingTexts}
                     speed={80}
@@ -51,16 +55,16 @@ const HeroSection = () => {
             </div>
 
             <div className="space-y-6">
-              <p className="text-base lg:text-lg text-gray-400 leading-relaxed">
+              <p className="text-base lg:text-lg text-gray-400 leading-relaxed backdrop-blur-sm bg-void-black/20 p-4 rounded-lg border border-cyber-cyan/10">
                 Africa's premier institute for supply chain excellence, delivering world-class training, 
                 cutting-edge research, and strategic consultation services across the continent.
               </p>
 
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-                <button className="px-6 py-3 bg-cyber-cyan text-void-black font-semibold rounded-lg hover-skew hover:bg-neon-yellow transition-all duration-300 cyber-glow">
+                <button className="px-8 py-4 bg-gradient-to-r from-cyber-cyan to-neon-yellow text-void-black font-semibold rounded-lg hover-skew hover:scale-105 transition-all duration-300 cyber-glow shadow-lg">
                   Explore Solutions
                 </button>
-                <button className="px-6 py-3 border-2 border-hacker-magenta text-hacker-magenta font-semibold rounded-lg hover-skew hover:bg-hacker-magenta hover:text-void-black transition-all duration-300 magenta-glow">
+                <button className="px-8 py-4 border-2 border-hacker-magenta text-hacker-magenta font-semibold rounded-lg hover-skew hover:bg-hacker-magenta hover:text-void-black transition-all duration-300 magenta-glow backdrop-blur-sm">
                   Download Report
                 </button>
               </div>
@@ -70,34 +74,36 @@ const HeroSection = () => {
           {/* Right Column - 3D Earth Globe */}
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyber-cyan to-hacker-magenta rounded-full blur-3xl opacity-20 animate-glow-pulse"></div>
-              <ErrorBoundary>
-                <Globe3D />
-              </ErrorBoundary>
+              <div className="absolute inset-0 bg-gradient-to-r from-cyber-cyan/20 via-hacker-magenta/20 to-neon-yellow/20 rounded-full blur-3xl opacity-60 animate-glow-pulse"></div>
+              <div className="relative backdrop-blur-sm bg-void-black/10 rounded-2xl p-4 border border-cyber-cyan/20">
+                <ErrorBoundary>
+                  <Globe3D />
+                </ErrorBoundary>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Counters - Centralized */}
-        <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto pt-8 border-t border-cyber-cyan/20">
-          <div className="text-center">
-            <div className="text-3xl font-bold text-cyber-cyan">54</div>
-            <div className="text-sm text-gray-400">African Countries</div>
+        <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto pt-8 border-t border-cyber-cyan/20 backdrop-blur-sm bg-void-black/20 rounded-lg p-6">
+          <div className="text-center group hover:scale-110 transition-transform duration-300">
+            <div className="text-3xl lg:text-4xl font-bold text-cyber-cyan glow-text group-hover:animate-pulse">54</div>
+            <div className="text-sm text-gray-400 font-medium">African Countries</div>
           </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-neon-yellow">285</div>
-            <div className="text-sm text-gray-400">Companies Served</div>
+          <div className="text-center group hover:scale-110 transition-transform duration-300">
+            <div className="text-3xl lg:text-4xl font-bold text-neon-yellow glow-text group-hover:animate-pulse">285</div>
+            <div className="text-sm text-gray-400 font-medium">Companies Served</div>
           </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-hacker-magenta">15+</div>
-            <div className="text-sm text-gray-400">Years Experience</div>
+          <div className="text-center group hover:scale-110 transition-transform duration-300">
+            <div className="text-3xl lg:text-4xl font-bold text-hacker-magenta glow-text group-hover:animate-pulse">15+</div>
+            <div className="text-sm text-gray-400 font-medium">Years Experience</div>
           </div>
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <div className="w-6 h-10 border-2 border-cyber-cyan rounded-full flex justify-center">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+        <div className="w-6 h-10 border-2 border-cyber-cyan rounded-full flex justify-center animate-glow-pulse">
           <div className="w-1 h-3 bg-cyber-cyan rounded-full mt-2 animate-bounce"></div>
         </div>
       </div>

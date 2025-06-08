@@ -57,12 +57,19 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Core cyberpunk colors
 				'cyber-cyan': '#00F0FF',
 				'hacker-magenta': '#FF00F5',
 				'neon-yellow': '#FFFF66',
 				'void-black': '#121212',
 				'cyber-dark': '#0A0A0A',
 				'cyber-gray': '#2A2A2A',
+				// New cosmic theme colors
+				'cosmic-purple': '#8A2387',
+				'cosmic-gold': '#F2C94C',
+				'space-navy': '#1A1A2E',
+				'cosmic-pink': '#E94057',
+				'cosmic-cream': '#FBEAE7',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -107,6 +114,20 @@ export default {
 					'50%': { 
 						boxShadow: '0 0 30px var(--cyber-cyan), 0 0 60px var(--cyber-cyan), 0 0 80px var(--cyber-cyan)' 
 					}
+				},
+				'cosmic-pulse': {
+					'0%, 100%': { 
+						boxShadow: '0 0 20px var(--cosmic-purple), 0 0 40px var(--cosmic-gold)',
+						transform: 'scale(1)'
+					},
+					'50%': { 
+						boxShadow: '0 0 30px var(--cosmic-purple), 0 0 60px var(--cosmic-gold), 0 0 80px var(--cyber-cyan)',
+						transform: 'scale(1.02)'
+					}
+				},
+				'particle-float': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-20px)' }
 				}
 			},
 			animation: {
@@ -114,7 +135,9 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.6s ease-out',
 				'slide-in-right': 'slide-in-right 0.5s ease-out',
-				'glow-pulse': 'glow-pulse 2s ease-in-out infinite'
+				'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
+				'cosmic-pulse': 'cosmic-pulse 3s ease-in-out infinite',
+				'particle-float': 'particle-float 6s ease-in-out infinite'
 			}
 		}
 	},
