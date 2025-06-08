@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 
@@ -34,8 +33,17 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-4">
+    <section 
+      id="contact" 
+      className="py-20 relative overflow-hidden"
+      style={{
+        backgroundImage: `linear-gradient(rgba(26, 26, 46, 0.85), rgba(18, 18, 18, 0.85)), url('/lovable-uploads/42cad4a4-a4a1-4fe8-bfce-11d5ecdf7167.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-raleway font-bold text-white mb-6">
             Get In <span className="text-cyber-cyan">Touch</span>
@@ -88,7 +96,7 @@ const ContactSection = () => {
               </div>
             </div>
 
-            <div className="bg-card/30 rounded-xl p-6 border border-cyber-cyan/20">
+            <div className="bg-card/30 rounded-xl p-6 border border-cyber-cyan/20 backdrop-blur-sm">
               <h4 className="text-white font-semibold mb-4">Office Hours</h4>
               <div className="space-y-2 text-gray-300">
                 <div className="flex justify-between">
@@ -122,7 +130,7 @@ const ContactSection = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-card/30 border border-cyber-cyan/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyber-cyan transition-colors duration-300"
+                    className="w-full px-4 py-3 bg-card/30 border border-cyber-cyan/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyber-cyan transition-colors duration-300 backdrop-blur-sm"
                     placeholder="Your full name"
                   />
                 </div>
@@ -137,7 +145,7 @@ const ContactSection = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-card/30 border border-cyber-cyan/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyber-cyan transition-colors duration-300"
+                    className="w-full px-4 py-3 bg-card/30 border border-cyber-cyan/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyber-cyan transition-colors duration-300 backdrop-blur-sm"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -154,7 +162,7 @@ const ContactSection = () => {
                     name="company"
                     value={formData.company}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-card/30 border border-cyber-cyan/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyber-cyan transition-colors duration-300"
+                    className="w-full px-4 py-3 bg-card/30 border border-cyber-cyan/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyber-cyan transition-colors duration-300 backdrop-blur-sm"
                     placeholder="Your organization"
                   />
                 </div>
@@ -167,7 +175,7 @@ const ContactSection = () => {
                     name="service"
                     value={formData.service}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-card/30 border border-cyber-cyan/20 rounded-lg text-white focus:outline-none focus:border-cyber-cyan transition-colors duration-300"
+                    className="w-full px-4 py-3 bg-card/30 border border-cyber-cyan/20 rounded-lg text-white focus:outline-none focus:border-cyber-cyan transition-colors duration-300 backdrop-blur-sm"
                   >
                     <option value="">Select a service</option>
                     {services.map((service) => (
@@ -190,7 +198,7 @@ const ContactSection = () => {
                   onChange={handleInputChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 bg-card/30 border border-cyber-cyan/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyber-cyan transition-colors duration-300 resize-none"
+                  className="w-full px-4 py-3 bg-card/30 border border-cyber-cyan/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyber-cyan transition-colors duration-300 resize-none backdrop-blur-sm"
                   placeholder="Tell us about your project or inquiry..."
                 />
               </div>
