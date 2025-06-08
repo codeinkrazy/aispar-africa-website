@@ -1,7 +1,7 @@
 
 import React from 'react';
 import TypingAnimation from './TypingAnimation';
-import Globe3D from './Globe3D';
+import StackedImages from './StackedImages';
 import ErrorBoundary from './ErrorBoundary';
 import ParticleBackground from './ParticleBackground';
 
@@ -35,13 +35,13 @@ const HeroSection = () => {
             </div>
 
             <div className="space-y-4">
-              <h1 className="text-4xl lg:text-6xl font-raleway font-bold text-white">
+              <h1 className="text-4xl lg:text-6xl font-raleway font-bold text-white relative z-20">
                 <span className="text-cyber-cyan glow-text">AISPAR</span>
                 <br />
                 <span className="text-neon-yellow glow-text">AFRICA</span>
               </h1>
               
-              <div className="h-24 relative">
+              <div className="h-24 relative z-20">
                 <div className="absolute inset-0 bg-gradient-to-r from-cyber-cyan/10 to-transparent rounded-lg"></div>
                 <p className="text-lg lg:text-xl font-montserrat text-gray-300 relative z-10 p-2">
                   <TypingAnimation 
@@ -54,7 +54,7 @@ const HeroSection = () => {
               </div>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-6 relative z-20">
               <p className="text-base lg:text-lg text-gray-400 leading-relaxed backdrop-blur-sm bg-void-black/20 p-4 rounded-lg border border-cyber-cyan/10">
                 Africa's premier institute for supply chain excellence, delivering world-class training, 
                 cutting-edge research, and strategic consultation services across the continent.
@@ -71,21 +71,18 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right Column - 3D Earth Globe */}
-          <div className="flex justify-center lg:justify-end">
+          {/* Right Column - Stacked Images */}
+          <div className="flex justify-center lg:justify-end relative z-20">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyber-cyan/20 via-hacker-magenta/20 to-neon-yellow/20 rounded-full blur-3xl opacity-60 animate-glow-pulse"></div>
-              <div className="relative backdrop-blur-sm bg-void-black/10 rounded-2xl p-4 border border-cyber-cyan/20">
-                <ErrorBoundary>
-                  <Globe3D />
-                </ErrorBoundary>
-              </div>
+              <ErrorBoundary>
+                <StackedImages />
+              </ErrorBoundary>
             </div>
           </div>
         </div>
 
         {/* Bottom Counters - Centralized */}
-        <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto pt-8 border-t border-cyber-cyan/20 backdrop-blur-sm bg-void-black/20 rounded-lg p-6">
+        <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto pt-8 border-t border-cyber-cyan/20 backdrop-blur-sm bg-void-black/20 rounded-lg p-6 relative z-20">
           <div className="text-center group hover:scale-110 transition-transform duration-300">
             <div className="text-3xl lg:text-4xl font-bold text-cyber-cyan glow-text group-hover:animate-pulse">54</div>
             <div className="text-sm text-gray-400 font-medium">African Countries</div>

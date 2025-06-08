@@ -17,8 +17,8 @@ const ParticleBackground = () => {
         window.particlesJS("particles-js", {
           "particles": {
             "number": { 
-              "value": window.innerWidth < 768 ? 40 : 80, 
-              "density": { "enable": true, "value_area": 800 } 
+              "value": window.innerWidth < 768 ? 30 : 60, 
+              "density": { "enable": true, "value_area": 1200 } 
             },
             "color": { "value": ["#F2C94C", "#8A2387", "#00F0FF"] },
             "shape": { 
@@ -26,25 +26,25 @@ const ParticleBackground = () => {
               "triangle": { "nb_sides": 3 }
             },
             "opacity": { 
-              "value": 0.6,
+              "value": 0.3,
               "random": true, 
-              "anim": { "enable": true, "speed": 1, "opacity_min": 0.3 } 
+              "anim": { "enable": true, "speed": 1, "opacity_min": 0.1 } 
             },
             "size": { 
-              "value": 3, 
+              "value": 1, 
               "random": true,
-              "anim": { "enable": true, "speed": 2, "size_min": 1 }
+              "anim": { "enable": true, "speed": 1, "size_min": 0.3 }
             },
             "line_linked": { 
               "enable": true, 
-              "distance": 150,
+              "distance": 120,
               "color": "#8A2387",
-              "opacity": 0.4,
-              "width": 1
+              "opacity": 0.2,
+              "width": 0.5
             },
             "move": { 
               "enable": true, 
-              "speed": 1.5, 
+              "speed": 0.8, 
               "direction": "none", 
               "random": false,
               "straight": false,
@@ -61,11 +61,11 @@ const ParticleBackground = () => {
               "resize": true
             },
             "modes": {
-              "grab": { "distance": 400, "line_linked": { "opacity": 1 } },
-              "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 },
-              "repulse": { "distance": 100, "duration": 0.4 },
-              "push": { "particles_nb": 4 },
-              "remove": { "particles_nb": 2 }
+              "grab": { "distance": 200, "line_linked": { "opacity": 0.5 } },
+              "bubble": { "distance": 200, "size": 20, "duration": 1, "opacity": 4, "speed": 2 },
+              "repulse": { "distance": 80, "duration": 0.3 },
+              "push": { "particles_nb": 2 },
+              "remove": { "particles_nb": 1 }
             }
           },
           "retina_detect": true
@@ -77,11 +77,11 @@ const ParticleBackground = () => {
     // Handle resize
     const handleResize = () => {
       if (window.particlesJS) {
-        const newCount = window.innerWidth < 768 ? 40 : 80;
+        const newCount = window.innerWidth < 768 ? 30 : 60;
         // Reinitialize with new particle count
         window.particlesJS("particles-js", {
           "particles": {
-            "number": { "value": newCount, "density": { "enable": true, "value_area": 800 } }
+            "number": { "value": newCount, "density": { "enable": true, "value_area": 1200 } }
           }
         });
       }
@@ -100,7 +100,7 @@ const ParticleBackground = () => {
   return (
     <div 
       id="particles-js" 
-      className="absolute inset-0 w-full h-full z-0"
+      className="absolute inset-0 w-full h-full z-0 pointer-events-none"
       style={{ background: 'transparent' }}
     />
   );
