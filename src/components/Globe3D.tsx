@@ -15,7 +15,10 @@ const EarthGlobe = () => {
     }
     if (africaHighlightRef.current) {
       africaHighlightRef.current.rotation.y += delta * 0.2;
-      africaHighlightRef.current.material.opacity = 0.3 + Math.sin(state.clock.elapsedTime * 2) * 0.2;
+      const material = africaHighlightRef.current.material as THREE.MeshStandardMaterial;
+      if (material && material.opacity !== undefined) {
+        material.opacity = 0.3 + Math.sin(state.clock.elapsedTime * 2) * 0.2;
+      }
     }
   });
 
