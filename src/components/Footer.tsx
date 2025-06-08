@@ -1,6 +1,5 @@
 
 import React from 'react';
-import SocialMediaIcons from './SocialMediaIcons';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -42,7 +41,7 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/60c5a76c-4e92-411d-9446-f05af861d5bf.png" 
                 alt="AISPAR Africa" 
-                className="h-12 w-auto cyber-glow rounded-full mr-4"
+                className="h-16 w-auto cyber-glow rounded-full mr-4 shadow-2xl"
               />
               <h3 className="text-2xl font-raleway font-bold text-white">
                 AISPAR <span className="text-cyber-cyan">AFRICA</span>
@@ -52,7 +51,6 @@ const Footer = () => {
               Transforming African supply chains through innovative research, strategic consulting, 
               and cutting-edge technology solutions.
             </p>
-            <SocialMediaIcons />
           </div>
 
           {/* Footer Links */}

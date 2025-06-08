@@ -6,11 +6,20 @@ interface StatItemProps {
   value: number;
   suffix?: string;
   prefix?: string;
+  generateRandom?: boolean;
 }
 
-const StatItem: React.FC<StatItemProps> = ({ label, value, suffix = '', prefix = '' }) => {
+const StatItem: React.FC<StatItemProps> = ({ 
+  label, 
+  value, 
+  suffix = '', 
+  prefix = '', 
+  generateRandom = false 
+}) => {
   const [displayValue, setDisplayValue] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [randomValue, setRandomValue] = useState(value);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -31,16 +40,26 @@ const StatItem: React.FC<StatItemProps> = ({ label, value, suffix = '', prefix =
   }, []);
 
   useEffect(() => {
+    if (generateRandom && isHovered) {
+      const randomVariation = Math.floor(Math.random() * (value * 0.3)) + value;
+      setRandomValue(randomVariation);
+    } else {
+      setRandomValue(value);
+    }
+  }, [isHovered, value, generateRandom]);
+
+  useEffect(() => {
     if (isVisible) {
       const duration = 2000;
       const steps = 60;
-      const increment = value / steps;
+      const targetValue = generateRandom && isHovered ? randomValue : value;
+      const increment = targetValue / steps;
       let current = 0;
 
       const timer = setInterval(() => {
         current += increment;
-        if (current >= value) {
-          setDisplayValue(value);
+        if (current >= targetValue) {
+          setDisplayValue(targetValue);
           clearInterval(timer);
         } else {
           setDisplayValue(Math.floor(current));
@@ -49,26 +68,36 @@ const StatItem: React.FC<StatItemProps> = ({ label, value, suffix = '', prefix =
 
       return () => clearInterval(timer);
     }
-  }, [isVisible, value]);
+  }, [isVisible, value, randomValue, generateRandom, isHovered]);
 
   return (
-    <div ref={ref} className="text-center p-6 rounded-lg bg-card/50 backdrop-blur-sm glow-border hover:cyber-glow transition-all duration-300">
+    <div 
+      ref={ref} 
+      className="text-center p-6 rounded-lg bg-card/50 backdrop-blur-sm glow-border hover:cyber-glow transition-all duration-300 cursor-pointer"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div className="text-4xl font-bold text-cyber-cyan mb-2">
         {prefix}{displayValue.toLocaleString()}{suffix}
       </div>
       <div className="text-gray-400 font-medium">{label}</div>
+      {generateRandom && (
+        <div className="text-xs text-neon-yellow mt-1">
+          {isHovered ? 'Live Data' : 'Hover for updates'}
+        </div>
+      )}
     </div>
   );
 };
 
 const StatsSection = () => {
   const stats = [
-    { label: 'African Countries Served', value: 54, suffix: '' },
-    { label: 'Supply Chain Projects', value: 1200, suffix: '+' },
-    { label: 'Research Publications', value: 85, suffix: '' },
-    { label: 'Training Programs Delivered', value: 450, suffix: '+' },
-    { label: 'Corporate Partners', value: 250, suffix: '+' },
-    { label: 'Economic Impact', value: 2.5, prefix: '$', suffix: 'B' },
+    { label: 'African Countries Served', value: 54, suffix: '', generateRandom: false },
+    { label: 'Supply Chain Projects', value: 285, suffix: '', generateRandom: true },
+    { label: 'Research Publications', value: 85, suffix: '', generateRandom: true },
+    { label: 'Training Programs Delivered', value: 450, suffix: '+', generateRandom: true },
+    { label: 'Corporate Partners', value: 180, suffix: '+', generateRandom: true },
+    { label: 'Economic Impact', value: 2.5, prefix: '$', suffix: 'B', generateRandom: true },
   ];
 
   return (
@@ -92,6 +121,7 @@ const StatsSection = () => {
               value={stat.value}
               prefix={stat.prefix}
               suffix={stat.suffix}
+              generateRandom={stat.generateRandom}
             />
           ))}
         </div>

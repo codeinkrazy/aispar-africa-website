@@ -5,7 +5,7 @@ import { MessageCircle, X } from 'lucide-react';
 const WhatsAppFloat = () => {
   const [isOpen, setIsOpen] = useState(false);
   
-  const phoneNumber = "+25417520202";
+  const phoneNumber = "+25416520202";
   const message = "Hello AISPAR Africa! I'm interested in learning more about your supply chain solutions and consulting services. Could you please provide me with information about your offerings?";
   
   const whatsappUrl = `https://wa.me/${phoneNumber.replace('+', '')}?text=${encodeURIComponent(message)}`;

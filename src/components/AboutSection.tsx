@@ -1,110 +1,150 @@
 
 import React from 'react';
-import { Target, Eye, Heart } from 'lucide-react';
+import Handshake3D from './Handshake3D';
+import ErrorBoundary from './ErrorBoundary';
 
 const AboutSection = () => {
-  const values = [
+  const achievements = [
     {
-      icon: Target,
-      title: 'Mission',
-      description: 'To transform African supply chains through innovative research, strategic consulting, and cutting-edge technology solutions.'
+      title: "Pan-African Presence",
+      description: "Operating across all 54 African countries with regional offices in key economic hubs."
     },
     {
-      icon: Eye,
-      title: 'Vision',
-      description: 'To be the leading catalyst for supply chain excellence across Africa, driving economic growth and sustainability.'
+      title: "Research Excellence",
+      description: "Over 85 published research papers influencing supply chain policies across the continent."
     },
     {
-      icon: Heart,
-      title: 'Values',
-      description: 'Innovation, integrity, collaboration, and commitment to African development and prosperity.'
+      title: "Industry Leadership",
+      description: "Leading the development of African supply chain standards and best practices."
+    },
+    {
+      title: "Global Partnerships",
+      description: "Strategic alliances with international organizations and development agencies."
+    }
+  ];
+
+  const services = [
+    {
+      icon: "🎓",
+      title: "Training Programs",
+      description: "Comprehensive supply chain education from certificate to PhD level programs."
+    },
+    {
+      icon: "🔬",
+      title: "Research & Development",
+      description: "Cutting-edge research in African supply chain dynamics and innovations."
+    },
+    {
+      icon: "💼",
+      title: "Strategic Consulting",
+      description: "Expert consultation for businesses entering or expanding in African markets."
+    },
+    {
+      icon: "🌍",
+      title: "Policy Advisory",
+      description: "Advisory services to governments on trade and supply chain policies."
     }
   ];
 
   return (
-    <section id="about" className="py-20 bg-cyber-gray/20">
+    <section id="about" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          <div>
-            <h2 className="text-4xl lg:text-5xl font-raleway font-bold text-white mb-6">
-              About <span className="text-neon-yellow">AISPAR</span>
-            </h2>
-            <p className="text-lg text-gray-300 mb-6">
-              AISPAR Africa is a pioneering organization dedicated to revolutionizing supply chain 
-              management across the African continent. With over 15 years of experience, we combine 
-              deep local knowledge with global best practices to deliver transformative solutions.
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-raleway font-bold text-white mb-6">
+            About <span className="text-cyber-cyan">AISPAR Africa</span>
+          </h2>
+          <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+            The African Institute for Supply Chain Advancement and Research (AISPAR) is the continent's 
+            premier institution dedicated to transforming supply chain management through education, 
+            research, and strategic consultation.
+          </p>
+        </div>
+
+        {/* Mission & Vision */}
+        <div className="grid lg:grid-cols-2 gap-12 mb-20">
+          <div className="bg-card/30 rounded-xl p-8 border border-cyber-cyan/20 hover:border-cyber-cyan/60 transition-all duration-300">
+            <h3 className="text-2xl font-raleway font-bold text-cyber-cyan mb-4">Our Mission</h3>
+            <p className="text-gray-300 leading-relaxed">
+              To advance supply chain excellence across Africa through world-class education, 
+              innovative research, and strategic partnerships that drive economic growth and 
+              sustainable development throughout the continent.
             </p>
-            <p className="text-lg text-gray-300 mb-8">
-              Our multidisciplinary team of experts works closely with governments, NGOs, and 
-              private sector organizations to build resilient, efficient, and sustainable supply 
-              chains that drive economic growth and improve livelihoods across Africa.
-            </p>
-            <div className="flex space-x-4">
-              <button className="px-6 py-3 bg-neon-yellow text-void-black font-semibold rounded-lg hover-skew hover:bg-cyber-cyan transition-all duration-300 yellow-glow">
-                Our Story
-              </button>
-              <button className="px-6 py-3 border-2 border-neon-yellow text-neon-yellow font-semibold rounded-lg hover-skew hover:bg-neon-yellow hover:text-void-black transition-all duration-300">
-                Meet the Team
-              </button>
-            </div>
           </div>
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-neon-yellow/20 to-cyber-cyan/20 rounded-full blur-3xl"></div>
-            <div className="relative bg-card/30 rounded-xl p-8 border border-neon-yellow/20">
-              <h3 className="text-2xl font-raleway font-bold text-white mb-6">Key Achievements</h3>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-neon-yellow/20 rounded-lg flex items-center justify-center">
-                    <span className="text-neon-yellow font-bold">15+</span>
-                  </div>
-                  <div>
-                    <h4 className="text-white font-semibold">Years of Excellence</h4>
-                    <p className="text-gray-400 text-sm">Serving African markets</p>
-                  </div>
+          <div className="bg-card/30 rounded-xl p-8 border border-hacker-magenta/20 hover:border-hacker-magenta/60 transition-all duration-300">
+            <h3 className="text-2xl font-raleway font-bold text-hacker-magenta mb-4">Our Vision</h3>
+            <p className="text-gray-300 leading-relaxed">
+              To be the leading catalyst for supply chain transformation in Africa, creating 
+              a connected, efficient, and resilient trade ecosystem that positions the continent 
+              as a global economic powerhouse.
+            </p>
+          </div>
+        </div>
+
+        {/* Services */}
+        <div className="mb-20">
+          <h3 className="text-3xl font-raleway font-bold text-white text-center mb-12">
+            Our <span className="text-neon-yellow">Services</span>
+          </h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {services.map((service, index) => (
+              <div key={index} className="text-center p-6 bg-card/20 rounded-xl border border-cyber-cyan/10 hover:border-cyber-cyan/40 transition-all duration-300 hover:cyber-glow">
+                <div className="text-4xl mb-4">{service.icon}</div>
+                <h4 className="text-xl font-raleway font-bold text-white mb-3">{service.title}</h4>
+                <p className="text-gray-400 text-sm">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Key Achievements with 3D Handshake */}
+        <div className="mb-16">
+          <h3 className="text-3xl font-raleway font-bold text-white text-center mb-12">
+            Key <span className="text-cyber-cyan">Achievements</span>
+          </h3>
+          
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Achievements List */}
+            <div className="space-y-8">
+              {achievements.map((achievement, index) => (
+                <div key={index} className="bg-card/30 rounded-lg p-6 border border-cyber-cyan/20 hover:border-cyber-cyan/60 transition-all duration-300">
+                  <h4 className="text-xl font-raleway font-bold text-cyber-cyan mb-3">
+                    {achievement.title}
+                  </h4>
+                  <p className="text-gray-300">{achievement.description}</p>
                 </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-cyber-cyan/20 rounded-lg flex items-center justify-center">
-                    <span className="text-cyber-cyan font-bold">50+</span>
-                  </div>
-                  <div>
-                    <h4 className="text-white font-semibold">Countries Reached</h4>
-                    <p className="text-gray-400 text-sm">Across the continent</p>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-hacker-magenta/20 rounded-lg flex items-center justify-center">
-                    <span className="text-hacker-magenta font-bold">$2B+</span>
-                  </div>
-                  <div>
-                    <h4 className="text-white font-semibold">Value Created</h4>
-                    <p className="text-gray-400 text-sm">Through optimization</p>
-                  </div>
-                </div>
+              ))}
+            </div>
+
+            {/* 3D Handshake */}
+            <div className="flex justify-center">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-cyber-cyan to-hacker-magenta rounded-xl blur-2xl opacity-20"></div>
+                <ErrorBoundary>
+                  <Handshake3D />
+                </ErrorBoundary>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {values.map((value, index) => {
-            const IconComponent = value.icon;
-            return (
-              <div
-                key={index}
-                className="text-center group"
-              >
-                <div className="w-20 h-20 bg-neon-yellow/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-neon-yellow/30 transition-colors duration-300 yellow-glow">
-                  <IconComponent className="w-10 h-10 text-neon-yellow" />
-                </div>
-                <h3 className="text-xl font-raleway font-bold text-white mb-4">
-                  {value.title}
-                </h3>
-                <p className="text-gray-300">
-                  {value.description}
-                </p>
-              </div>
-            );
-          })}
+        {/* Call to Action */}
+        <div className="text-center bg-gradient-to-r from-cyber-cyan/10 to-hacker-magenta/10 rounded-2xl p-12 border border-cyber-cyan/20">
+          <h3 className="text-3xl font-raleway font-bold text-white mb-6">
+            Ready to Transform Your Supply Chain?
+          </h3>
+          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            Join hundreds of organizations across Africa who trust AISPAR for their 
+            supply chain excellence journey.
+          </p>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <button className="px-8 py-4 bg-cyber-cyan text-void-black font-semibold rounded-lg hover-skew hover:bg-neon-yellow transition-all duration-300 cyber-glow">
+              Start Your Journey
+            </button>
+            <button className="px-8 py-4 border-2 border-hacker-magenta text-hacker-magenta font-semibold rounded-lg hover-skew hover:bg-hacker-magenta hover:text-void-black transition-all duration-300 magenta-glow">
+              Learn More
+            </button>
+          </div>
         </div>
       </div>
     </section>

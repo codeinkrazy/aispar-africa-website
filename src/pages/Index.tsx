@@ -9,6 +9,7 @@ import ResearchSection from '../components/ResearchSection';
 import AboutSection from '../components/AboutSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
+import MambaTechFooter from '../components/MambaTechFooter';
 import WhatsAppFloat from '../components/WhatsAppFloat';
 
 const Index = () => {
@@ -55,6 +56,7 @@ const Index = () => {
       <AboutSection />
       <ContactSection />
       <Footer />
+      <MambaTechFooter />
       <WhatsAppFloat />
     </div>
   );
