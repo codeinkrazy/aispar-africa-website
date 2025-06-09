@@ -20,7 +20,7 @@ const ParticleBackground = () => {
               "value": window.innerWidth < 768 ? 30 : 60, 
               "density": { "enable": true, "value_area": 1200 } 
             },
-            "color": { "value": "#FFFF66" }, // Changed to yellow
+            "color": { "value": "#FFFF66" }, // Yellow
             "shape": { 
               "type": ["circle", "triangle"],
               "triangle": { "nb_sides": 3 }
@@ -31,9 +31,9 @@ const ParticleBackground = () => {
               "anim": { "enable": true, "speed": 1, "opacity_min": 0.1 } 
             },
             "size": { 
-              "value": 1.25, // Increased by 25% (was 1, now 1.25)
+              "value": 1.875, // Increased by 50% (was 1.25, now 1.875)
               "random": true,
-              "anim": { "enable": true, "speed": 1, "size_min": 0.375 } // Also increased min size by 25%
+              "anim": { "enable": true, "speed": 1, "size_min": 0.5625 } // Also increased min size by 50%
             },
             "line_linked": { 
               "enable": true, 

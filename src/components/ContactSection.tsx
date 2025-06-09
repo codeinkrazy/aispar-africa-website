@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 
@@ -28,7 +29,21 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
+    
+    // Create mailto link with both email addresses
+    const emailAddresses = 'info@aispar.africa,oloocm@gmail.com';
+    const subject = encodeURIComponent(`Contact Form Submission from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      `Company: ${formData.company}\n` +
+      `Service of Interest: ${formData.service}\n\n` +
+      `Message:\n${formData.message}`
+    );
+    
+    const mailtoLink = `mailto:${emailAddresses}?subject=${subject}&body=${body}`;
+    window.location.href = mailtoLink;
+    
     console.log('Form submitted:', formData);
   };
 
@@ -68,8 +83,8 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-semibold mb-1">Email</h4>
-                  <p className="text-gray-300">info@aisparafrica.com</p>
-                  <p className="text-gray-300">research@aisparafrica.com</p>
+                  <p className="text-gray-300">info@aispar.africa</p>
+                  <p className="text-gray-300">oloocm@gmail.com</p>
                 </div>
               </div>
 
@@ -79,8 +94,8 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-semibold mb-1">Phone</h4>
-                  <p className="text-gray-300">+254 17 520 202</p>
-                  <p className="text-gray-300">+254 20 XXX XXXX</p>
+                  <p className="text-gray-300">+254 716 520 202</p>
+                  <p className="text-gray-300">+254 733 763 427</p>
                 </div>
               </div>
 
