@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
@@ -15,7 +16,7 @@ I am Bill Odhiambo from MambaTech Solutions Ltd. We are interested in a customiz
 
 Key Details:
 • Training Focus: Supply Chain Management (logistics, procurement, or digital SCM, if applicable)
-• Participants: 15 mid-level managers/logistics staff
+• Participants: [Number] mid-level managers/logistics staff
 • Format: In-person, virtual, or hybrid
 • Duration: 1-day workshop or multi-week course (flexible)
 • Budget: Please share cost estimates
@@ -70,7 +71,7 @@ MambaTech Solutions Ltd`
     const mailtoLink = `mailto:${emailAddresses}?subject=${subject}&body=${body}`;
     window.location.href = mailtoLink;
     
-    // Show stunning success toast
+    // Show stunning success toast with string values
     toast({
       title: "✅ Message Sent Successfully!",
       description: "Your message has been successfully sent to AISPAR Africa. Sent to: info@aispar.africa & oloocm@gmail.com. We'll get back to you within 24 hours!",
