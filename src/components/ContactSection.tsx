@@ -1,14 +1,40 @@
-
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
 
 const ContactSection = () => {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    service: '',
-    message: ''
+    name: 'Bill Odhiambo',
+    email: 'bill@mambatech.co.ke',
+    company: 'MambaTech Solutions Ltd',
+    service: 'Training & Consulting',
+    message: `Dear AISPAR Africa Team,
+
+I am Bill Odhiambo from MambaTech Solutions Ltd. We are interested in a customized Supply Chain Management training session for our team and would like to discuss a potential collaboration with AISPAR Africa.
+
+Key Details:
+• Training Focus: Supply Chain Management (logistics, procurement, or digital SCM, if applicable)
+• Participants: 15 mid-level managers/logistics staff
+• Format: In-person, virtual, or hybrid
+• Duration: 1-day workshop or multi-week course (flexible)
+• Budget: Please share cost estimates
+
+Additional Needs:
+• Participant certification
+• Industry-specific case studies  
+• Post-training support (materials/follow-ups)
+
+Kindly provide:
+• A detailed training proposal
+• Trainer qualifications
+• Pricing and available discounts
+
+Please let me know the next steps. Looking forward to your response.
+
+Best regards,
+Bill Odhiambo
+MambaTech Solutions Ltd`
   });
 
   const services = [
@@ -43,6 +69,28 @@ const ContactSection = () => {
     
     const mailtoLink = `mailto:${emailAddresses}?subject=${subject}&body=${body}`;
     window.location.href = mailtoLink;
+    
+    // Show stunning success toast
+    toast({
+      title: (
+        <div className="flex items-center space-x-2">
+          <CheckCircle className="w-5 h-5 text-neon-yellow" />
+          <span className="text-white font-semibold">Message Sent Successfully!</span>
+        </div>
+      ),
+      description: (
+        <div className="text-gray-300 space-y-2">
+          <p className="text-sm">Your message has been successfully sent to AISPAR Africa.</p>
+          <div className="flex items-center space-x-2 text-xs">
+            <div className="w-2 h-2 bg-cyber-cyan rounded-full animate-pulse"></div>
+            <span>Sent to: info@aispar.africa & oloocm@gmail.com</span>
+          </div>
+          <p className="text-xs text-neon-yellow">We'll get back to you within 24 hours!</p>
+        </div>
+      ),
+      className: "bg-gradient-to-r from-card/90 to-cyber-dark/90 border-cyber-cyan/30 backdrop-blur-lg shadow-2xl",
+      duration: 8000,
+    });
     
     console.log('Form submitted:', formData);
   };
