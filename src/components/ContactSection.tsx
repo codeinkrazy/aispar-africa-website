@@ -72,22 +72,8 @@ MambaTech Solutions Ltd`
     
     // Show stunning success toast
     toast({
-      title: (
-        <div className="flex items-center space-x-2">
-          <CheckCircle className="w-5 h-5 text-neon-yellow" />
-          <span className="text-white font-semibold">Message Sent Successfully!</span>
-        </div>
-      ),
-      description: (
-        <div className="text-gray-300 space-y-2">
-          <p className="text-sm">Your message has been successfully sent to AISPAR Africa.</p>
-          <div className="flex items-center space-x-2 text-xs">
-            <div className="w-2 h-2 bg-cyber-cyan rounded-full animate-pulse"></div>
-            <span>Sent to: info@aispar.africa & oloocm@gmail.com</span>
-          </div>
-          <p className="text-xs text-neon-yellow">We'll get back to you within 24 hours!</p>
-        </div>
-      ),
+      title: "✅ Message Sent Successfully!",
+      description: "Your message has been successfully sent to AISPAR Africa. Sent to: info@aispar.africa & oloocm@gmail.com. We'll get back to you within 24 hours!",
       className: "bg-gradient-to-r from-card/90 to-cyber-dark/90 border-cyber-cyan/30 backdrop-blur-lg shadow-2xl",
       duration: 8000,
     });

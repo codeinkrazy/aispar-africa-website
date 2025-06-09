@@ -20,7 +20,7 @@ const ParticleBackground = () => {
               "value": window.innerWidth < 768 ? 30 : 60, 
               "density": { "enable": true, "value_area": 1200 } 
             },
-            "color": { "value": "#FFFF66" }, // Yellow
+            "color": { "value": "#F2C94C" }, // Golden color (cosmic-gold)
             "shape": { 
               "type": ["circle", "triangle"],
               "triangle": { "nb_sides": 3 }
@@ -31,16 +31,16 @@ const ParticleBackground = () => {
               "anim": { "enable": true, "speed": 1, "opacity_min": 0.1 } 
             },
             "size": { 
-              "value": 1.875, // Increased by 50% (was 1.25, now 1.875)
+              "value": 1.5, // Reduced by 80% (was 1.875, now 1.5)
               "random": true,
-              "anim": { "enable": true, "speed": 1, "size_min": 0.5625 } // Also increased min size by 50%
+              "anim": { "enable": true, "speed": 1, "size_min": 0.45 } // Also reduced min size by 80%
             },
             "line_linked": { 
               "enable": true, 
               "distance": 120,
-              "color": "#8A2387",
-              "opacity": 0.2,
-              "width": 0.5
+              "color": "#F2C94C", // Golden connecting lines
+              "opacity": 0.15, // Slightly more subtle
+              "width": 0.4 // Thinner lines
             },
             "move": { 
               "enable": true, 
