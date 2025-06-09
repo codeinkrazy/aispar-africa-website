@@ -192,7 +192,7 @@
     background-position: 50% 50%;
   }
 
-  /* Enhanced Glow Animations */
+  /* Enhanced Award-Winning Animations */
   @keyframes cosmic-pulse {
     0%, 100% { 
       box-shadow: 0 0 20px var(--cosmic-purple), 0 0 40px var(--cosmic-gold), 0 0 60px var(--cyber-cyan);
@@ -204,8 +204,108 @@
     }
   }
 
+  @keyframes slide-in-left {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-right {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-top {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-bottom {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes float-gentle {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-10px) rotate(1deg);
+    }
+    75% {
+      transform: translateY(-5px) rotate(-1deg);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px var(--cyber-cyan), 0 0 40px var(--cyber-cyan);
+      transform: scale(1);
+    }
+    50% {
+      box-shadow: 0 0 40px var(--cyber-cyan), 0 0 80px var(--cyber-cyan), 0 0 120px var(--cyber-cyan);
+      transform: scale(1.05);
+    }
+  }
+
   .animate-cosmic-pulse {
     animation: cosmic-pulse 3s ease-in-out infinite;
+  }
+
+  .animate-slide-in-left {
+    animation: slide-in-left 0.8s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.8s ease-out;
+  }
+
+  .animate-slide-in-top {
+    animation: slide-in-top 0.6s ease-out;
+  }
+
+  .animate-slide-in-bottom {
+    animation: slide-in-bottom 0.6s ease-out;
+  }
+
+  .animate-float-gentle {
+    animation: float-gentle 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
   }
 
   /* Parallax Effects */
@@ -214,6 +314,57 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+
+  /* Shimmer Effect for Premium Feel */
+  .shimmer-effect {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+  }
+
+  /* Enhanced Hover Effects */
+  .premium-hover {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .premium-hover:hover {
+    transform: translateY(-8px) scale(1.03);
+    filter: brightness(1.2);
+  }
+
+  /* Award-winning Card Effects */
+  .award-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .award-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent,
+      rgba(0, 240, 255, 0.1),
+      transparent
+    );
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+    opacity: 0;
+  }
+
+  .award-card:hover::before {
+    opacity: 1;
+    animation: shimmer 2s ease-in-out;
   }
 
   /* Mobile Optimizations */
@@ -229,18 +380,34 @@
     .glow-text {
       text-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
     }
+
+    .premium-hover:hover {
+      transform: translateY(-4px) scale(1.02);
+    }
   }
 
   /* Accessibility - Reduced Motion */
   @media (prefers-reduced-motion: reduce) {
     .animate-glow-pulse,
     .animate-bounce,
-    .animate-cosmic-pulse {
+    .animate-cosmic-pulse,
+    .animate-float-gentle,
+    .animate-pulse-glow {
       animation: none;
     }
     
     .hover-skew:hover {
       transform: scale(1.05);
     }
+
+    .premium-hover:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  /* Performance Optimizations */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
   }
 }
