@@ -17,55 +17,50 @@ const ParticleBackground = () => {
         window.particlesJS("particles-js", {
           "particles": {
             "number": { 
-              "value": window.innerWidth < 768 ? 30 : 60, 
-              "density": { "enable": true, "value_area": 1200 } 
+              "value": window.innerWidth < 768 ? 20 : 40, 
+              "density": { "enable": true, "value_area": 1500 } 
             },
-            "color": { "value": "#F2C94C" }, // Golden color (cosmic-gold)
+            "color": { "value": "#00F0FF" }, // Cyber-cyan color
             "shape": { 
-              "type": ["circle", "triangle"],
-              "triangle": { "nb_sides": 3 }
+              "type": "circle"
             },
             "opacity": { 
-              "value": 0.3,
+              "value": 0.15,
               "random": true, 
-              "anim": { "enable": true, "speed": 1, "opacity_min": 0.1 } 
+              "anim": { "enable": true, "speed": 0.5, "opacity_min": 0.05 } 
             },
             "size": { 
-              "value": 1.5, // Reduced by 80% (was 1.875, now 1.5)
+              "value": 0.8,
               "random": true,
-              "anim": { "enable": true, "speed": 1, "size_min": 0.45 } // Also reduced min size by 80%
+              "anim": { "enable": true, "speed": 0.5, "size_min": 0.2 }
             },
             "line_linked": { 
               "enable": true, 
-              "distance": 120,
-              "color": "#F2C94C", // Golden connecting lines
-              "opacity": 0.15, // Slightly more subtle
-              "width": 0.4 // Thinner lines
+              "distance": 100,
+              "color": "#00F0FF",
+              "opacity": 0.08,
+              "width": 0.2
             },
             "move": { 
               "enable": true, 
-              "speed": 0.8, 
+              "speed": 0.5, 
               "direction": "none", 
-              "random": false,
+              "random": true,
               "straight": false,
               "out_mode": "bounce",
-              "bounce": false,
-              "attract": { "enable": true, "rotateX": 600, "rotateY": 1200 }
+              "bounce": true,
+              "attract": { "enable": false }
             }
           },
           "interactivity": {
             "detect_on": "canvas",
             "events": {
               "onhover": { "enable": true, "mode": "repulse" },
-              "onclick": { "enable": true, "mode": "push" },
+              "onclick": { "enable": false },
               "resize": true
             },
             "modes": {
-              "grab": { "distance": 200, "line_linked": { "opacity": 0.5 } },
-              "bubble": { "distance": 200, "size": 20, "duration": 1, "opacity": 4, "speed": 2 },
-              "repulse": { "distance": 80, "duration": 0.3 },
-              "push": { "particles_nb": 2 },
-              "remove": { "particles_nb": 1 }
+              "repulse": { "distance": 60, "duration": 0.2 }
             }
           },
           "retina_detect": true
@@ -77,11 +72,11 @@ const ParticleBackground = () => {
     // Handle resize
     const handleResize = () => {
       if (window.particlesJS) {
-        const newCount = window.innerWidth < 768 ? 30 : 60;
+        const newCount = window.innerWidth < 768 ? 20 : 40;
         // Reinitialize with new particle count
         window.particlesJS("particles-js", {
           "particles": {
-            "number": { "value": newCount, "density": { "enable": true, "value_area": 1200 } }
+            "number": { "value": newCount, "density": { "enable": true, "value_area": 1500 } }
           }
         });
       }
