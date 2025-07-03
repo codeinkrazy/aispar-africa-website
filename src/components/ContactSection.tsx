@@ -6,36 +6,11 @@ import { useToast } from '@/hooks/use-toast';
 const ContactSection = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
-    name: 'Bill Odhiambo',
-    email: 'bill@mambatech.co.ke',
-    company: 'MambaTech Solutions Ltd',
-    service: 'Training & Consulting',
-    message: `Dear AISPAR Africa Team,
-
-I am Bill Odhiambo from MambaTech Solutions Ltd. We are interested in a customized Supply Chain Management training session for our team and would like to discuss a potential collaboration with AISPAR Africa.
-
-Key Details:
-• Training Focus: Supply Chain Management (logistics, procurement, or digital SCM, if applicable)
-• Participants: [Number] mid-level managers/logistics staff
-• Format: In-person, virtual, or hybrid
-• Duration: 1-day workshop or multi-week course (flexible)
-• Budget: Please share cost estimates
-
-Additional Needs:
-• Participant certification
-• Industry-specific case studies  
-• Post-training support (materials/follow-ups)
-
-Kindly provide:
-• A detailed training proposal
-• Trainer qualifications
-• Pricing and available discounts
-
-Please let me know the next steps. Looking forward to your response.
-
-Best regards,
-Bill Odhiambo
-MambaTech Solutions Ltd`
+    name: '',
+    email: '',
+    company: '',
+    service: '',
+    message: ''
   });
 
   const services = [
