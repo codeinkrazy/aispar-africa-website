@@ -57,8 +57,8 @@ MambaTech Solutions Ltd`
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Create mailto link with both email addresses
-    const emailAddresses = 'info@aispar.africa,oloocm@gmail.com';
+    // Create mailto link with the single email address
+    const emailAddress = 'oloocm@gmail.com';
     const subject = encodeURIComponent(`Contact Form Submission from ${formData.name}`);
     const body = encodeURIComponent(
       `Name: ${formData.name}\n` +
@@ -68,13 +68,13 @@ MambaTech Solutions Ltd`
       `Message:\n${formData.message}`
     );
     
-    const mailtoLink = `mailto:${emailAddresses}?subject=${subject}&body=${body}`;
+    const mailtoLink = `mailto:${emailAddress}?subject=${subject}&body=${body}`;
     window.location.href = mailtoLink;
     
     // Show stunning success toast with string values
     toast({
       title: "✅ Message Sent Successfully!",
-      description: "Your message has been successfully sent to AISPAR Africa. Sent to: info@aispar.africa & oloocm@gmail.com. We'll get back to you within 24 hours!",
+      description: "Your message has been successfully sent. Sent to: oloocm@gmail.com. We'll get back to you within 24 hours!",
       className: "bg-gradient-to-r from-card/90 to-cyber-dark/90 border-cyber-cyan/30 backdrop-blur-lg shadow-2xl",
       duration: 8000,
     });

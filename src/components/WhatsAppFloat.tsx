@@ -5,8 +5,8 @@ import { MessageCircle, X } from 'lucide-react';
 const WhatsAppFloat = () => {
   const [isOpen, setIsOpen] = useState(false);
   
-  const phoneNumber = "+25416520202";
-  const message = "Hello AISPAR Africa! I'm interested in learning more about your supply chain solutions and consulting services. Could you please provide me with information about your offerings?";
+  const phoneNumber = "+254716520202";
+  const message = "Hello! I'm interested in learning more about your services and would like to make a customer inquiry. Could you please provide me with information about what you offer?";
   
   const whatsappUrl = `https://wa.me/${phoneNumber.replace('+', '')}?text=${encodeURIComponent(message)}`;
 
@@ -27,10 +27,10 @@ const WhatsAppFloat = () => {
         <div className="fixed bottom-20 right-6 z-50 bg-card border border-cyber-cyan/20 rounded-lg p-4 shadow-xl max-w-sm animate-fade-in">
           <div className="flex items-center mb-3">
             <div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
-            <h3 className="text-white font-semibold">AISPAR Africa</h3>
+            <h3 className="text-white font-semibold">Customer Support</h3>
           </div>
           <p className="text-gray-300 text-sm mb-4">
-            Hi there! 👋 How can we help you with your supply chain needs today?
+            Hi there! 👋 How can we help you today? Feel free to reach out with any inquiries!
           </p>
           <a
             href={whatsappUrl}
