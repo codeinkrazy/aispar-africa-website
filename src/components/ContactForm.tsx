@@ -46,12 +46,11 @@ const ContactForm = () => {
     const mailtoLink = `mailto:${emailAddress}?subject=${subject}&body=${body}`;
     window.location.href = mailtoLink;
     
-    // Show stunning success toast with string values
+    // Show success toast
     toast({
-      title: "✅ Message Sent Successfully!",
-      description: "Your message has been successfully sent. Sent to: oloocm@gmail.com. We'll get back to you within 24 hours!",
-      className: "bg-gradient-to-r from-card/90 to-cyber-dark/90 border-cyber-cyan/30 backdrop-blur-lg shadow-2xl",
-      duration: 8000,
+      title: "Message Sent Successfully!",
+      description: "We'll get back to you within 24 hours.",
+      duration: 5000,
     });
     
     console.log('Form submitted:', formData);
