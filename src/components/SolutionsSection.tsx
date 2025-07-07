@@ -39,7 +39,7 @@ const SolutionsSection = () => {
   };
 
   return (
-    <section id="solutions" className="py-20 bg-glacial-pearl">
+    <section id="solutions" className="py-20 bg-chrome-ice">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-raleway font-bold text-titan-mist mb-6">
@@ -57,7 +57,7 @@ const SolutionsSection = () => {
             return (
               <div
                 key={index}
-                className="bg-white/80 rounded-xl p-8 border border-chrome-ice hover:border-cyber-aqua/60 transition-all duration-300 hover:shadow-lg group"
+                className="bg-glacial-pearl/90 rounded-xl p-8 border border-chrome-ice hover:border-cyber-aqua/60 transition-all duration-300 hover:shadow-lg group"
               >
                 <div className="flex items-start space-x-6">
                   <div className="flex-shrink-0">

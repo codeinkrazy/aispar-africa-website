@@ -45,9 +45,9 @@ const ContactSection = () => {
   return (
     <section 
       id="contact" 
-      className="py-20 relative overflow-hidden bg-glacial-pearl"
+      className="py-20 relative overflow-hidden bg-ion-blue"
       style={{
-        backgroundImage: `linear-gradient(rgba(244, 248, 251, 0.95), rgba(244, 248, 251, 0.95)), url('/lovable-uploads/42cad4a4-a4a1-4fe8-bfce-11d5ecdf7167.png')`,
+        backgroundImage: `linear-gradient(rgba(179, 229, 252, 0.95), rgba(179, 229, 252, 0.95)), url('/lovable-uploads/42cad4a4-a4a1-4fe8-bfce-11d5ecdf7167.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'
