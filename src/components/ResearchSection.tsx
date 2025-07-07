@@ -81,9 +81,13 @@ const ResearchSection = () => {
                 on supply chain efficiency across 15 African countries. This groundbreaking 
                 research provides actionable insights for businesses and policymakers.
               </p>
-              <button className="px-6 py-3 bg-hacker-magenta text-void-black font-semibold rounded-lg hover-skew hover:bg-neon-yellow transition-all duration-300 magenta-glow">
+              <a 
+                href="https://drive.google.com/uc?export=download&id=1ZL10n6XZr0Z1HQGeX6M6u5fEyDMhWWnD"
+                className="inline-block px-6 py-3 bg-hacker-magenta text-void-black font-semibold rounded-lg hover-skew hover:bg-neon-yellow transition-all duration-300 magenta-glow"
+                download="AISPAR_Digital_Supply_Chain_Report.pdf"
+              >
                 Download Report
-              </button>
+              </a>
             </div>
             <div className="bg-gradient-to-br from-hacker-magenta/20 to-cyber-cyan/20 rounded-lg p-6">
               <div className="space-y-4">
