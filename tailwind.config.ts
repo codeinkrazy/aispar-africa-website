@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -57,19 +56,29 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Core cyberpunk colors
+				// Core cyberpunk colors (keeping existing for compatibility)
 				'cyber-cyan': '#00F0FF',
 				'hacker-magenta': '#FF00F5',
 				'neon-yellow': '#FFFF66',
 				'void-black': '#121212',
 				'cyber-dark': '#0A0A0A',
 				'cyber-gray': '#2A2A2A',
-				// New cosmic theme colors
+				// New cosmic theme colors (keeping existing for compatibility)
 				'cosmic-purple': '#8A2387',
 				'cosmic-gold': '#F2C94C',
 				'space-navy': '#1A1A2E',
 				'cosmic-pink': '#E94057',
 				'cosmic-cream': '#FBEAE7',
+				// LUMINA TECH Palette
+				'glacial-pearl': '#F4F8FB',
+				'titan-mist': '#2E2E38',
+				'atmos-silver': '#7C8A9E',
+				'cyber-aqua': '#00F0FF',
+				'plasma-orchid': '#C084FC',
+				'photon-gold': '#FFD54F',
+				'glass-lilac': '#E2D5FF',
+				'ion-blue': '#B3E5FC',
+				'chrome-ice': '#D8E3EC',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
