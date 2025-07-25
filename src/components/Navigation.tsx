@@ -8,10 +8,10 @@ const Navigation = () => {
   const [audienceDropdownOpen, setAudienceDropdownOpen] = useState(false);
 
   const audiences = [
-    { name: 'Business', icon: Building, color: 'text-cyber-aqua' },
-    { name: 'Student', icon: GraduationCap, color: 'text-plasma-orchid' },
-    { name: 'Researcher', icon: FlaskConical, color: 'text-photon-gold' },
-    { name: 'Government', icon: Shield, color: 'text-glass-lilac' },
+    { name: 'Business', icon: Building, color: 'text-cyber-cyan' },
+    { name: 'Student', icon: GraduationCap, color: 'text-hacker-magenta' },
+    { name: 'Researcher', icon: FlaskConical, color: 'text-neon-yellow' },
+    { name: 'Government', icon: Shield, color: 'text-cosmic-purple' },
   ];
 
   const getNavItemsForAudience = (audience: string) => {
@@ -63,7 +63,7 @@ const Navigation = () => {
   const IconComponent = currentAudience?.icon || Building;
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-glacial-pearl/95 backdrop-blur-md border-b border-chrome-ice/50 shadow-lg">
+    <nav className="fixed top-0 w-full z-50 bg-card/95 backdrop-blur-md border-b border-cyber-cyan/20 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -81,7 +81,7 @@ const Navigation = () => {
             <div className="relative">
               <button
                 onClick={() => setAudienceDropdownOpen(!audienceDropdownOpen)}
-                className="flex items-center space-x-2 bg-glacial-pearl/10 border border-chrome-ice/30 rounded-lg px-4 py-2 text-titan-mist hover:bg-glacial-pearl/20 transition-all duration-300"
+                className="flex items-center space-x-2 bg-card/20 border border-cyber-cyan/30 rounded-lg px-4 py-2 text-white hover:bg-card/40 transition-all duration-300"
               >
                 <IconComponent size={16} className={currentAudience?.color} />
                 <span className="text-sm font-medium">I am a: {selectedAudience}</span>
@@ -89,7 +89,7 @@ const Navigation = () => {
               </button>
               
               {audienceDropdownOpen && (
-                <div className="absolute top-full mt-2 left-0 bg-glacial-pearl border border-chrome-ice rounded-lg shadow-lg z-50 min-w-[200px]">
+                <div className="absolute top-full mt-2 left-0 bg-card border border-cyber-cyan/30 rounded-lg shadow-lg z-50 min-w-[200px]">
                   {audiences.map((audience) => {
                     const AudienceIcon = audience.icon;
                     return (
@@ -99,10 +99,10 @@ const Navigation = () => {
                           setSelectedAudience(audience.name);
                           setAudienceDropdownOpen(false);
                         }}
-                        className="flex items-center space-x-3 w-full px-4 py-3 text-left hover:bg-ion-blue/20 transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg"
+                        className="flex items-center space-x-3 w-full px-4 py-3 text-left hover:bg-cyber-cyan/20 transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg"
                       >
                         <AudienceIcon size={16} className={audience.color} />
-                        <span className="text-sm font-medium text-titan-mist">{audience.name}</span>
+                        <span className="text-sm font-medium text-white">{audience.name}</span>
                       </button>
                     );
                   })}
@@ -116,7 +116,7 @@ const Navigation = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-cyber-aqua hover:text-photon-gold px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105"
+                  className="text-cyber-cyan hover:text-neon-yellow px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105"
                 >
                   {item.name}
                 </a>
@@ -138,11 +138,11 @@ const Navigation = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden bg-glacial-pearl/95 backdrop-blur-lg border-t border-chrome-ice/30">
+        <div className="md:hidden bg-card/95 backdrop-blur-lg border-t border-cyber-cyan/30">
           <div className="px-4 pt-4 pb-3 space-y-4">
             {/* Mobile Audience Selector */}
             <div className="space-y-2">
-              <span className="text-xs font-medium text-atmos-silver uppercase tracking-wide">I am a:</span>
+              <span className="text-xs font-medium text-gray-300 uppercase tracking-wide">I am a:</span>
               <div className="grid grid-cols-2 gap-2">
                 {audiences.map((audience) => {
                   const AudienceIcon = audience.icon;
@@ -154,12 +154,12 @@ const Navigation = () => {
                       }}
                       className={`flex items-center space-x-2 p-3 rounded-lg border transition-all duration-200 ${
                         selectedAudience === audience.name
-                          ? 'bg-ion-blue/30 border-cyber-aqua'
-                          : 'bg-glacial-pearl/50 border-chrome-ice hover:bg-ion-blue/20'
+                          ? 'bg-cyber-cyan/30 border-cyber-cyan'
+                          : 'bg-card/50 border-cyber-cyan/20 hover:bg-cyber-cyan/20'
                       }`}
                     >
                       <AudienceIcon size={16} className={audience.color} />
-                      <span className="text-sm font-medium text-titan-mist">{audience.name}</span>
+                      <span className="text-sm font-medium text-white">{audience.name}</span>
                     </button>
                   );
                 })}
@@ -167,12 +167,12 @@ const Navigation = () => {
             </div>
 
             {/* Mobile Navigation Items */}
-            <div className="border-t border-chrome-ice/30 pt-4 space-y-1">
+            <div className="border-t border-cyber-cyan/30 pt-4 space-y-1">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-titan-mist hover:text-cyber-aqua block px-3 py-2 text-base font-medium transition-all duration-300"
+                  className="text-white hover:text-cyber-cyan block px-3 py-2 text-base font-medium transition-all duration-300"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
